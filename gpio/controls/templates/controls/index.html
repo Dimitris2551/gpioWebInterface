@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <title></title>
+    <meta content="">
+    <style></style>
+  </head>
+  <body>
+    {% if control_list %}
+    <ul>
+    {% for control in control_list %}
+        <h3>
+        {% if control.state == True %}
+            <li style="background-color:Tomato;"><a href="/{{ control.pin }}/">{{ control }}</a></li>
+        {% else %}
+            <li style="background-color:MediumSeaGreen;"><a href="/{{ control.pin }}/">{{ control }}</a></li>
+        {% endif %}
+        <p></p>
+        </h3>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No control relays are available.</p>
+{% endif %}
+  </body>
+</html>
